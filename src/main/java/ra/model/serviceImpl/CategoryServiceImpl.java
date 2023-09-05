@@ -45,4 +45,9 @@ public class CategoryServiceImpl implements CategoryService {
         }
         return categoryRepository.findAllByNameContainsIgnoreCase(name, PageRequest.of(page,size,s));
     }
+
+    @Override
+    public List<Category> findCategoryByBlogId(Long blogId) {
+        return categoryRepository.findCategoriesByBlogId(blogId);
+    }
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Detail</h1>
+<h3><a href="/blog">Back To Blog</a></h3>
+<form th:object="${blog}">
+    <table>
+        <tr>
+            <td>Title: </td>
+            <input  th:field="*{id}">
+            <td><input th:field="*{title}" type="text"></td>
+        </tr>
+        <tr>
+            <td>Category: </td>
+            <td th:each="cat : ${cate}">
+                <p th:text="${cat.name}"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>Content: </td>
+            <td><input type="text" th:field="*{content}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
